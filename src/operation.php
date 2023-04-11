@@ -13,7 +13,6 @@ if (!$conn) {
 
 $operation = $_POST["operation"];
 $id = $_POST["id"];
-// print_r($operation);
 
 switch ($operation) {
     
@@ -34,9 +33,6 @@ switch ($operation) {
         break;
     case 'edit':
         $text = $_POST["text"];
-        // echo $id;
-        // echo $text;
-        // echo $operation;
         $sql = "UPDATE `mytodo` SET `Text` = '$text' WHERE `mytodo`.`ID` = '$id'";
         $result = mysqli_query($conn, $sql);
         print_r($result);

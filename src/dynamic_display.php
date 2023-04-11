@@ -12,7 +12,6 @@ if (!$conn) {
 }
 
 $operation = $_POST["operation"];
-// print_r($operation);
 switch ($operation) {
     case 'todo':
         if ($_POST["date"]){

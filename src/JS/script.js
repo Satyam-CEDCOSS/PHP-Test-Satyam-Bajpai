@@ -7,7 +7,6 @@ function display(){
         url: "/display.php",
         dataType: "text",
       }).done(function (result){
-        // console.log(result);
           $("#add_todo").html(result)
     });
 }
@@ -24,7 +23,6 @@ $(document).ready(function(){
             data: {"text":val,"date":date},
             dataType: "text",
           }).done(function (result){
-              console.log(result)
               display()
         });      
     })    
@@ -62,7 +60,6 @@ function clear_complete(){
         data: {"operation":"clear"},
         dataType: "text",
       }).done(function (result){
-          console.log(result)
           display()
     });
 }
@@ -75,7 +72,6 @@ function deletes(val){
         data: {"operation":"delete","id":val},
         dataType: "text",
       }).done(function (result){
-          console.log(result)
           display()
     });
 }
@@ -86,7 +82,6 @@ function check(val){
         data: {"operation":"check","id":val},
         dataType: "text",
       }).done(function (result){
-          console.log(result)
           display()
     });
 }
@@ -97,7 +92,6 @@ function uncheck(val){
         data: {"operation":"uncheck","id":val},
         dataType: "text",
       }).done(function (result){
-          console.log(result)
           display()
     });
 }
@@ -110,7 +104,6 @@ $(document).on('keyup', '.col-11', function(){
         data: {"operation":"edit","id":$id,"text":$val},
         dataType: "text",
       }).done(function (result){
-          console.log(result) 
           display()
     });
 })
