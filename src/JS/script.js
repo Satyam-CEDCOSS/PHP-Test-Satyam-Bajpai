@@ -115,6 +115,7 @@ $(document).on('keyup', '.col-11', function(){
     });
 })
 
+// Date Function
 function date() {
     display()
 }
