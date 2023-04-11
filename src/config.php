@@ -18,7 +18,7 @@ if (!$conn) {
 
 $sql_todo = "SELECT * FROM mytodo WHERE `Type`='TODO'";
 $result = mysqli_query($conn, $sql_todo);
-$_SESSION["Count"]=mysqli_num_rows($result);
+// $_SESSION["Count"]=mysqli_num_rows($result);
 if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
       array_push($_SESSION["Todo"],$row);

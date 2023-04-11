@@ -32,6 +32,15 @@ switch ($operation) {
         $result = mysqli_query($conn, $sql);
         print_r($result);
         break;
+    case 'edit':
+        $text = $_POST["text"];
+        // echo $id;
+        // echo $text;
+        // echo $operation;
+        $sql = "UPDATE `mytodo` SET `Text` = '$text' WHERE `mytodo`.`ID` = '$id'";
+        $result = mysqli_query($conn, $sql);
+        print_r($result);
+        break;
         
     
     default:

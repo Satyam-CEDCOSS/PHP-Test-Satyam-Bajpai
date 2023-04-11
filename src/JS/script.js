@@ -1,3 +1,4 @@
+// Display Function 
 function display(){
     let date = $("#pick_date").val()
     $.ajax({
@@ -12,6 +13,7 @@ function display(){
 }
 display()
 
+// Add Function 
 $(document).ready(function(){
     $(document).on('click','#add',function(){
         let val = $("#add_input").val()
@@ -32,20 +34,22 @@ $(document).ready(function(){
 
 // Dynamic Display 
 function active(){
+    let date = $("#pick_date").val()
     $.ajax({
         type: "POST",
         url: "/dynamic_display.php",
-        data: {"operation":"todo"},
+        data: {"operation":"todo","date":date},
         dataType: "text",
       }).done(function (result){
         $("#add_todo").html(result)
     });
 }
 function completed(){
+    let date = $("#pick_date").val()
     $.ajax({
         type: "POST",
         url: "/dynamic_display.php",
-        data: {"operation":"completed"},
+        data: {"operation":"completed","date":date},
         dataType: "text",
       }).done(function (result){
         $("#add_todo").html(result)
@@ -97,7 +101,20 @@ function uncheck(val){
           display()
     });
 }
+$(document).on('keyup', '.col-11', function(){
+    $id = $(this).attr('id');
+    $val = $(this).val()
+    $.ajax({
+        type: "POST",
+        url: "/operation.php",
+        data: {"operation":"edit","id":$id,"text":$val},
+        dataType: "text",
+      }).done(function (result){
+          console.log(result) 
+          display()
+    });
+})
 
-// function date() {
-    
-// }
+function date() {
+    display()
+}
