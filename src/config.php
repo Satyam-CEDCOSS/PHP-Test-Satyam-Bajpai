@@ -1,5 +1,6 @@
 <?php
 session_start();
+// All SESSIONS 
 $_SESSION["Todo"]=array();
 $_SESSION["Completed"]=array();
 $_SESSION["Count"]=0;
@@ -16,6 +17,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+// Main Config Data 
 $sql_todo = "SELECT * FROM mytodo WHERE `Type`='TODO'";
 $result = mysqli_query($conn, $sql_todo);
 if (mysqli_num_rows($result) > 0) {

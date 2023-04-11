@@ -11,6 +11,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+//Dynamic Display Function 
 $operation = $_POST["operation"];
 switch ($operation) {
     case 'todo':

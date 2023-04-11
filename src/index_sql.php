@@ -11,6 +11,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+// Addition Function 
 $text = $_POST["text"];
 $date = $_POST["date"];
 if ($date){

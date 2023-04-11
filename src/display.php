@@ -1,5 +1,6 @@
 <?php
 include_once "config.php";
+// Main Display Function 
     $txt="";
     if ($_POST["date"]){
         $_SESSION["Count"]=sizeof($_SESSION["Todo"]);
